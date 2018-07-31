@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 /**
  * @ClassName HelloWorldController
  * @Description
- * @Author luyao.duan
+ * @Author martind
  * @Date 2018/7/31 9:47
  **/
 @Controller
