@@ -4,6 +4,41 @@
     <title>my hello world</title>
 </head>
 <body>
-<a href="/doICando">这个是一个跳转链接</a>
+<a href="/doICando?name=top">这个是一个跳转链接</a>
+<br/>
+<br/>
+<a href="/antStyle">Ant Style</a>
+<br/>
+<br/>
+<a href="/testPage/12">占位符测试</a>
+<br/>
+<br/>
+<a href="/testGet/123">Test GET</a>
+<br/>
+<br/>
+
+
+<form method="post" action = "testPost">
+    <input type="submit" value="POST"/>
+</form>
+
+<br/>
+<br/>
+
+<form action="/testDelete/12" method="post">
+    <input type="hidden" name="_method" value="DELETE"/>
+    <input type="submit" value="DELETE"/>
+
+
+</form>
+
+<br/>
+<br/>
+
+<form action="/testPut/5827" method="post">
+    <input type="hidden" name="_method" value="PUT"/>
+    <input type="submit" value="PUT"/>
+</form>
+
 </body>
 </html>
