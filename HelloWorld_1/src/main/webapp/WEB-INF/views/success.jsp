@@ -15,19 +15,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>show message</title>
 <body>
-    Map: ${requestScope.age}
     <br/>
-
-    Model: ${requestScope.mail}
+    From requestScope: ${requestScope.city}
     <br/>
-    ModelMap: ${requestScope.city}
-    <br/>
-    ModelMap: ${sessionScope.city}
+    From sessionScope: ${sessionScope.city}
 
     <br/>
     <br/>
 
-    <a href="/result">Result</a>
+    <a href="/springmvc/result">Result</a>
 
 
 </body>
