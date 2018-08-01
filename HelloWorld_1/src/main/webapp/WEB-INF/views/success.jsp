@@ -20,6 +20,13 @@
 
     Model: ${requestScope.mail}
     <br/>
-    ModelMdap: ${requestScope.City}
+    ModelMdap: ${requestScope.city}
+    <br/>
+    ModelMdap: ${sessionScope.city}
+
+    <br/>
+    <br/>
+
+    <a href="springmvc/result">Result</a>
 </body>
 </html>

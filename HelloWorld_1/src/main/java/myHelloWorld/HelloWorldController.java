@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
@@ -18,7 +19,10 @@ import java.util.Map;
  * @Author martind
  * @Date 2018/7/31 9:47
  **/
+
 @Controller
+@RequestMapping(value = "/springmvc")
+@SessionAttributes(value = {"city"},types={String.class})
 public class HelloWorldController {
 
     @RequestMapping(value = "/doICando", method = RequestMethod.GET,params = "name=top")
@@ -189,8 +193,12 @@ public class HelloWorldController {
         return "success";
     }
     @RequestMapping(value = "/testModelMap")
-    public String testModelMap(ModelMap modelMap){
-        modelMap.addAttribute("City","xiamen");
+    public String testModelMap(ModelMap  modelMap){
+        modelMap.addAttribute("city","China");
         return "success";
+    }
+    @RequestMapping("/result")
+    public String testResult(){
+        return "Result";
     }
 }
