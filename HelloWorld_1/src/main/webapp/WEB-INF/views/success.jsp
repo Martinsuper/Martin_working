@@ -15,18 +15,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>show message</title>
 <body>
-    Map: ${requestScope.age}
-    <br/>
-
-    Model: ${requestScope.mail}
-    <br/>
-    ModelMdap: ${requestScope.city}
-    <br/>
-    ModelMdap: ${sessionScope.city}
-
-    <br/>
-    <br/>
-
-    <a href="springmvc/result">Result</a>
+    <h1>Operation Successful!</h1>
 </body>
 </html>
