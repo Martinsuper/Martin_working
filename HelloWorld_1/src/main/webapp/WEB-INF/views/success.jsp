@@ -15,12 +15,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>show message</title>
 <body>
-    <h1>${aaa}</h1>
+    Map: ${requestScope.age}
+    <br/>
 
-<%--<%--%>
-    <%--String st = request.getAttribute("name");--%>
-    <%--System.out.println(st);--%>
-<%--%>--%>
-
+    Model: ${requestScope.mail}
+    <br/>
+    ModelMdap: ${requestScope.City}
 </body>
 </html>

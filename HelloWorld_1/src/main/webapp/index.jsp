@@ -80,5 +80,22 @@
 <br/>
 
 <a href="testModelAndView">Test ModelAndView</a>
+
+
+<br/>
+<br/>
+
+<a href="/testMap">Test Map</a>
+
+<br/>
+<br/>
+
+<a href="/testModel">Test Model</a>
+
+<br/>
+<br/>
+
+<a href="/testModelMap">Test ModelMap</a>
+
 </body>
 </html>

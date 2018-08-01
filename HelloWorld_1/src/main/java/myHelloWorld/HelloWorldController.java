@@ -3,12 +3,14 @@ package myHelloWorld;
 import myPOJO.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
 
 /**
  * @ClassName HelloWorldController
@@ -168,11 +170,27 @@ public class HelloWorldController {
     }
 
     @RequestMapping("/testModelAndView")
-    public ModelAndView testModelAndView(Model model){
+    public ModelAndView testModelAndView(){
         ModelAndView mv = new ModelAndView();
         mv.setViewName("success");
         // ModelAndView 模型数据的值，是放到Request范围当中
-        model.addAttribute("aaa", "343433");
+        mv.addObject("name","Martin");
         return mv;
+    }
+
+    @RequestMapping(value = "/testMap")
+    public String testMap(Map<String,Object> map){
+        map.put("age",12);
+        return "success";
+    }
+    @RequestMapping(value = "/testModel")
+    public String testMap(Model model){
+        model.addAttribute("mail","martindly@163.com");
+        return "success";
+    }
+    @RequestMapping(value = "/testModelMap")
+    public String testModelMap(ModelMap modelMap){
+        modelMap.addAttribute("City","xiamen");
+        return "success";
     }
 }
