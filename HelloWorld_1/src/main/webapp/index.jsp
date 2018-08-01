@@ -98,5 +98,14 @@
 <a href="/testModelMap">Test ModelMap</a>
 
 
+<form action="/springmvc/testModelAttribute">
+    id:<input type="text" name="id" value="101"/>
+    <br/>
+    name:<input type="text" name="name" value="Tom"/>
+    <br/>
+    <input type="submit" value="update"/>
+</form>
+
+
 </body>
 </html>

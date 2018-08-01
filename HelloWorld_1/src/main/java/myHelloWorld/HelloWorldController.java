@@ -1,13 +1,12 @@
 package myHelloWorld;
 
+import myPOJO.Account;
 import myPOJO.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,7 +21,8 @@ import java.util.Map;
 
 @Controller
 @RequestMapping(value = "/springmvc")
-@SessionAttributes(value = {"city"},types={String.class})
+// 失败的尝试……
+//@SessionAttributes(value = {"city"},types={String.class})
 public class HelloWorldController {
 
     @RequestMapping(value = "/doICando", method = RequestMethod.GET,params = "name=top")
@@ -200,5 +200,16 @@ public class HelloWorldController {
     @RequestMapping("/result")
     public String testResult(){
         return "Result";
+    }
+    @ModelAttribute
+    public void start(Map<String,Object> map){
+        Account account = new Account(123,"Tom","2016-1-1");
+        map.put("test_Martin",account);
+    }
+    @RequestMapping(value = "testModelAttribute")
+    public String update(@ModelAttribute(value = "test_Martin") Account account){
+        System.out.println(account);
+
+        return "success";
     }
 }
