@@ -11,4 +11,7 @@
         <property name="suffix" value=".jsp"/>
     </bean>
     <context:annotation-config></context:annotation-config>
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="abc"></property>
+    </bean>
 </beans>

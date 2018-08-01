@@ -33,4 +33,15 @@ public class HelloWorldController {
     public String testResult(){
         return "Result";
     }
+
+
+    @RequestMapping(value = "/testViewAndViewResolver")
+    public String testViewAndViewResolver(){
+        System.out.println("testViewAndViewResolver");
+        return "success";
+    }
+    @RequestMapping(value = "/testA")
+    public String testA(){
+        return "internal";
+    }
 }

@@ -6,7 +6,7 @@
 <body>
 
 
-<a href="/springmvc/testModelMap">Test Session</a>
+<a href="/springmvc/testA">Test testViewAndViewResolver</a>
 
 
 <form action="/springmvc/testModelAttribute">
