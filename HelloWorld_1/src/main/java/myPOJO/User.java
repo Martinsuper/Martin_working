@@ -9,7 +9,7 @@ package myPOJO;
 public class User {
     private Integer id;
     private String name;
-    private Address address;
+    private String address;
     public User(){
 
     }
@@ -32,11 +32,11 @@ public class User {
 
 
 
-    public Address getAddress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 

@@ -1,5 +1,6 @@
 package myHelloWorld;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import myPOJO.Account;
 import myPOJO.User;
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.Map;
 
 /**
@@ -21,16 +23,24 @@ import java.util.Map;
 
 @Controller
 @RequestMapping(value = "/springmvc")
-@SessionAttributes(value = {"city"},types={String.class})
 public class HelloWorldController {
 
-    @RequestMapping(value = "/testModelMap")
-    public String testModelMap(ModelMap  modelMap){
-        modelMap.addAttribute("city","China");
-        return "success";
+    @RequestMapping(value = "/test")
+    @ResponseBody
+    public User testModelMap(){
+        User user = new User();
+        user.setAddress("福建省厦门市");
+        user.setId(100);
+        user.setName("Martin");
+        return user;
     }
-    @RequestMapping("/result")
-    public String testResult(){
-        return "Result";
+
+    @RequestMapping(value = "/post",method = RequestMethod.POST,produces = "application/json")
+    @ResponseBody
+    public User testReturn(@RequestBody String user) throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        User userRE =  objectMapper.readValue(user, User.class);
+        System.out.println(userRE);
+        return userRE;
     }
 }
